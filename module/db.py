@@ -16,7 +16,7 @@ from sqlalchemy import (
 from sqlalchemy.orm import (
     Query,
     DeclarativeBase,
-    session,
+    Session,
     Mapped,
     mapped_column,
     relationship,
@@ -32,7 +32,6 @@ db_relative_path = "data/sqlite.db"
 os.makedirs(os.path.dirname(db_relative_path), exist_ok=True)
 engine = create_engine(f"sqlite:///{db_relative_path}")
 
-metadata = MetaData()
 
 # 定義
 # https://docs.sqlalchemy.org/en/20/orm/quickstart.html
@@ -59,4 +58,4 @@ class Address(Base):
     email_address: Mapped[String] = mapped_column(String(30), nullable=True)
     user_id: Mapped[int] = mapped_column(ForeignKey(User.id), nullable=False)
 
-    user: Mapped[User] = relationship(back_populates=User.addresses)
+    user: Mapped[User] = relationship(back_populates="addresses")
