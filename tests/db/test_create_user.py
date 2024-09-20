@@ -10,3 +10,6 @@ def test_create_user():
         u.fullname = "testtest"
         s.add(u)
         s.commit()
+
+        assert u.fullname is not None
+        assert u.id is not None

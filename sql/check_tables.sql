@@ -1,4 +1,5 @@
 SELECT
     *
 from
-    user;
+    user
+    ;

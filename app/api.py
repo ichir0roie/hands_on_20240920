@@ -8,7 +8,7 @@ import uvicorn
 host = "localhost"
 port = 9999
 if __name__ == "__main__":
+    print(f"ここ開いて！ http://{host}:{port}/docs")
     uvicorn.run(app, host=host, port=port)
 
-print(f"ここ開いて！ {host}:{port}/docs")
 #
