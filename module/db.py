@@ -32,6 +32,7 @@ db_relative_path = "data/sqlite.db"
 os.makedirs(os.path.dirname(db_relative_path), exist_ok=True)
 engine = create_engine(f"sqlite:///{db_relative_path}")
 
+metadata = MetaData()
 
 # 定義
 # https://docs.sqlalchemy.org/en/20/orm/quickstart.html

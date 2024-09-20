@@ -3,5 +3,13 @@
     "files.autoSave": "onFocusChange",
     "[python]": {
         "editor.defaultFormatter": "ms-python.autopep8"
-    }
+    },
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "kyla sample",
+            "database": "${workspaceFolder:hands_on_20240920}/data/sqlite.db"
+        }
+    ]
 }
