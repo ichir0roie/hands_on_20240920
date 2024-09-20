@@ -6,6 +6,6 @@ def list_users() -> list[User]:
         User
     )
     with Session(engine) as s:
-        users = s.scalars(q).all()
+        users = s.scalars(q).unique().all()
         # users = [u for u in users]  # fetch
     return users

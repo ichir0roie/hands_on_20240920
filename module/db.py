@@ -47,9 +47,7 @@ class User(Base):
     name: Mapped[String] = mapped_column(String(30), nullable=False)
     fullname: Mapped[String] = mapped_column(String(30), nullable=False)
 
-    addresses: Mapped[list[Address]] = relationship(
-        back_populates="user", cascade="all, delete-orphan"
-    )
+    addresses: Mapped[list[Address]] = relationship(lazy="joined")
 
 
 class Address(Base):
@@ -57,5 +55,3 @@ class Address(Base):
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     email_address: Mapped[String] = mapped_column(String(30), nullable=True)
     user_id: Mapped[int] = mapped_column(ForeignKey(User.id), nullable=False)
-
-    user: Mapped[User] = relationship(back_populates="addresses")
