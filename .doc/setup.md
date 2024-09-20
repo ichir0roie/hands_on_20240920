@@ -33,3 +33,4 @@ pipenv install SQLAlchemy
 
 https://fastapi.tiangolo.com/ja/
 pipenv install "fastapi[standard]"
+
