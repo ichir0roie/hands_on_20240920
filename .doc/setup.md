@@ -25,3 +25,11 @@ py -3.12 -m pipenv install
 pipenv shell
 or
 py -3.12 -m pipenv shell
+
+# 依存パッケージのインストール
+
+https://www.sqlalchemy.org/
+pipenv install SQLAlchemy
+
+https://fastapi.tiangolo.com/ja/
+pipenv install "fastapi[standard]"
