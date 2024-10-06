@@ -1,11 +1,10 @@
 from module.db import *
 
 
-def list_users() -> list[User]:
+def list_users(s: Session) -> list[User]:
     q = select(
         User
     )
-    with Session(engine) as s:
-        users = s.scalars(q).unique().all()
-        # users = [u for u in users]  # fetch
+    users = s.scalars(q).unique().all()
+    # users = [u for u in users]  # fetch
     return users
